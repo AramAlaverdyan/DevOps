@@ -1,3 +1,20 @@
 fvfdvdfvdfvd
 
 Cod@ poxel em mi hat stugi eli
+
+from random import randrange as r
+import random
+
+n = int(input())
+a = [input() for _ in range(n)]
+b = [i for i in a]
+c = []
+random.shuffle(b)
+while len(c) < n:
+    for i in range(n):
+        if a[i] == b[i] or (a[i] + ' - ' + b[i]) in c:
+            random.shuffle(b)
+            continue
+        else:
+            c.append(a[i] + ' - ' + b[i])
+print(c)
